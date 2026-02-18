@@ -32,7 +32,7 @@ const uploadDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir);
 }
-app.use('/upload', express.static(uploadDir));
+app.use('/uploads', express.static(uploadDir));
 
 // API Routes
 app.use('/api/user', userRoutes);

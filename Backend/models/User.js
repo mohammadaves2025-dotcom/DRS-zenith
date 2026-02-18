@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
     
-    officialId: { type:String ,default:"umpire"},
+    officialId: { type:String },
     email: { type:String , required : true , unique: true},
     password: { type:String , required : true},
     

@@ -44,7 +44,7 @@ export const registerUser = async (req, res) => {
 
 
     try {
-        const { officailId, email, password } = req.body;
+        const { officialId, email, password } = req.body;
 
         //checking if the user already exists
         const exists = await User.findOne({ email });
@@ -65,8 +65,8 @@ export const registerUser = async (req, res) => {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
-        const newUser = User.create({
-            officailId,
+        const newUser = await User.create({
+            officialId,
             email,
             password: hashedPassword
         });

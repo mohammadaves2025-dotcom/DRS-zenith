@@ -31,7 +31,7 @@ const Upload = ({ onVideoSelect }) => {
         formData.append('video', file);
 
         try {
-            const endpoint = `${backendUrl}/api/video/uploads`; 
+            const endpoint = `${backendUrl}/api/video/upload`; 
             console.log("🚀 Sending to:", endpoint);
 
             const response = await axios.post(
